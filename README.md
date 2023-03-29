@@ -1,16 +1,14 @@
-# arearestrita
+# Area Restrita! feito em Flutter
+Projeto de controle de acesso de áreas restritas. UTFPR
+<br>
+Trabalho envolvendo as matérias de Desenvolvimento Web-Servidor - Desenvolvimento Mobile e Projeto de Software da UTFPR 
 
-A new Flutter project.
+alunos: 
+Augusto <br>
+João Paulo <br>
+Leonardo <br>
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Entregas:
+V1) <br>
+V2) <br>
+V3) <br>
