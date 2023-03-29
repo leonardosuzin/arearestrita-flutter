@@ -10,7 +10,6 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Controle de Acesso'),
       ),
-      ])
-    );
+      );
   }
 }
