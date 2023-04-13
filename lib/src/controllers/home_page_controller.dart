@@ -1,9 +1,9 @@
-import '../models/pessoa.dart';
+import '../../models/pessoa.dart';
 
-class home_page_controller {
-  List<Pessoa> tabela;
+class HomePageController {
+  List<Pessoa> tabela = [];
 
-   late home_page_controller(){
+  HomePageController() {
     tabela = [
       Pessoa(
         idPessoa: 01,
