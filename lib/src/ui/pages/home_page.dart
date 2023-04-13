@@ -51,72 +51,77 @@ class _MyHomePageState extends State<HomePage> {
           ),
           const SizedBox(height: 20),
           // Grid com 4 cards
-          GridView.count(
-            crossAxisCount: 2,
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 10,
-            shrinkWrap: true,
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            children: [
-              // Card 1 - Cadastro
-              Card(
-                child: InkWell(
-                  onTap: () {
-                    Get.toNamed("/");
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(Icons.file_copy, size: 50),
-                      SizedBox(height: 10),
-                      Text('Cadastros'),
-                    ],
+          material3.SizedBox(
+            height: 500,
+            width: 500,
+            child: GridView.count(
+              crossAxisCount: 2,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+              shrinkWrap: true,
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              children: [
+                // Card 1 - Cadastro
+                Card(
+                  child: InkWell(
+                    onTap: () {
+                      Get.toNamed("/");
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(Icons.file_copy, size: 50),
+                        SizedBox(height: 10),
+                        Text('Cadastros'),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              // Card 2 - Câmeras
-              Card(
-                child: InkWell(
-                  onTap: () {},
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(Icons.camera_alt, size: 50),
-                      SizedBox(height: 10),
-                      Text('Câmeras'),
-                    ],
+
+                // Card 2 - Câmeras
+                Card(
+                  child: InkWell(
+                    onTap: () {},
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(Icons.camera_alt, size: 50),
+                        SizedBox(height: 10),
+                        Text('Câmeras'),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              // Card 3 - Controle de Acesso
-              Card(
-                child: InkWell(
-                  onTap: () {},
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(Icons.security, size: 50),
-                      SizedBox(height: 10),
-                      Text('Controle de Acesso'),
-                    ],
+                // Card 3 - Controle de Acesso
+                Card(
+                  child: InkWell(
+                    onTap: () {},
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(Icons.security, size: 50),
+                        SizedBox(height: 10),
+                        Text('Controle de Acesso'),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              // Card 4 - Pânico
-              Card(
-                child: InkWell(
-                  onTap: () {},
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(Icons.warning, size: 50),
-                      SizedBox(height: 10),
-                      Text('Pânico'),
-                    ],
+                // Card 4 - Pânico
+                Card(
+                  child: InkWell(
+                    onTap: () {},
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(Icons.warning, size: 50),
+                        SizedBox(height: 10),
+                        Text('Pânico'),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
