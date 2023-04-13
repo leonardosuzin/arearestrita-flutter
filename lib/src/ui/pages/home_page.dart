@@ -19,10 +19,10 @@ class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  MyHomePageState createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<HomePage> {
+class MyHomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
   // Lista de widgets para exibir nas telas de navegação
