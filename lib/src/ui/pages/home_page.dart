@@ -36,8 +36,12 @@ class MyHomePageState extends State<HomePage> {
           // Imagem centralizada no topo
           Container(
             height: 150,
+            width: 150,
             decoration: const BoxDecoration(
-                image: DecorationImage(image: AssetImage("logoAppGuard2.jpg"))),
+                  image: const DecorationImage(
+                  fit: BoxFit.cover,
+                  image: const AssetImage("assets/logoAppGuard2.jpg"))               
+                ),              
           ),
           // Image.network(
           //   'https://static.wikia.nocookie.net/marvelcinematicuniverse/images/9/9b/S.H.I.E.L.D._logo_NEW.png/revision/latest?cb=20190422151215',
