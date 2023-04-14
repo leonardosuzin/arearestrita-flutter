@@ -33,7 +33,9 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                TextField(
+                Container(
+                  width: 500,
+                  child: TextField(
                   style: TextStyle(color: Colors.black),
                   controller: _emailController,
                   decoration: InputDecoration(
@@ -51,8 +53,11 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                SizedBox(height: 16.0),
-                TextField(
+              ),
+              SizedBox(height: 16.0),
+              Container(
+                  width: 500,
+                  child: TextField(
                   style: TextStyle(color: Colors.black),
                   controller: _passwordController,
                   decoration: InputDecoration(
@@ -70,6 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   obscureText: true,
+                  ),
                 ),
                 SizedBox(height: 24.0),
                 ElevatedButton(                  
