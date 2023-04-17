@@ -3,11 +3,8 @@ import 'package:arearestrita/src/ui/pages/cadastro_page.dart';
 import 'package:arearestrita/src/ui/pages/cadastro_salas.dart';
 import 'package:flutter/material.dart';
 import 'package:arearestrita/constants.dart';
-import 'package:arearestrita/src/ui/pages/home_page.dart';
 import 'package:get/get.dart';
-import 'package:get/utils.dart';
 import 'cadastro_areas.dart';
-
 
 class ListViewPage extends StatefulWidget {
   @override

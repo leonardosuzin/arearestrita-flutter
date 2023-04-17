@@ -1,4 +1,6 @@
 import 'package:arearestrita/constants.dart';
+import 'package:arearestrita/src/ui/pages/perfil.dart';
+import 'package:arearestrita/src/ui/pages/relatorios.dart';
 import 'package:flutter/material.dart' as material3;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -86,7 +88,9 @@ class MyHomePageState extends State<HomePage> {
                 // Card 2 - Câmeras
                 Card(
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(PerfilPage());
+                    },                        
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
@@ -100,7 +104,9 @@ class MyHomePageState extends State<HomePage> {
                 // Card 3 - Controle de Acesso
                 Card(
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(RelatoriosPage());
+                    },                    
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
@@ -171,8 +177,8 @@ class MyHomePageState extends State<HomePage> {
             label: 'Início',
           ),
           material3.BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Pesquisar',
+            icon: Icon(Icons.qr_code),
+            label: 'QR Code',
           ),
           material3.BottomNavigationBarItem(
             icon: Icon(Icons.person),
