@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:arearestrita/constants.dart';
 import 'package:arearestrita/src/ui/pages/home_page.dart';
+import 'package:arearestrita/src/ui/pages/cadastro_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -90,6 +91,21 @@ class _LoginPageState extends State<LoginPage> {
                     backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
                   ),
                 ),
+                /*
+                SizedBox(height: 24.0),
+                ElevatedButton(                  
+                  child: Text(
+                    'Cadastre-se',
+                    style: const TextStyle(color: Colors.white)
+                    ),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => CadastroPage()));
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                  ),
+                ),
+                */
               ],
             ),
           ),

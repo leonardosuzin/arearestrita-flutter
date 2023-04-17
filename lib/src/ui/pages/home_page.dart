@@ -2,6 +2,7 @@ import 'package:arearestrita/constants.dart';
 import 'package:flutter/material.dart' as material3;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:arearestrita/src/ui/pages/cadastros.dart';
 
 // class HomePage extends StatelessWidget {
 //   @override
@@ -69,7 +70,7 @@ class MyHomePageState extends State<HomePage> {
                 Card(
                   child: InkWell(
                     onTap: () {
-                      Get.toNamed("/");
+                      Get.to(ListViewPage());
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -89,9 +90,9 @@ class MyHomePageState extends State<HomePage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
-                        Icon(Icons.camera_alt, size: 50),
+                        Icon(Icons.verified_user, size: 50),
                         SizedBox(height: 10),
-                        Text('Câmeras'),
+                        Text('Perfil'),
                       ],
                     ),
                   ),
@@ -105,7 +106,7 @@ class MyHomePageState extends State<HomePage> {
                       children: const [
                         Icon(Icons.security, size: 50),
                         SizedBox(height: 10),
-                        Text('Controle de Acesso'),
+                        Text('Acessos'),
                       ],
                     ),
                   ),
@@ -117,9 +118,9 @@ class MyHomePageState extends State<HomePage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
-                        Icon(Icons.warning, size: 50),
+                        Icon(Icons.qr_code, size: 50),
                         SizedBox(height: 10),
-                        Text('Pânico'),
+                        Text('QR Code'),
                       ],
                     ),
                   ),
