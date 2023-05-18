@@ -30,7 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  barcode_scan2: ^4.0.0
+  flutter_barcode_scanner: ^2.0.0
 
 
 

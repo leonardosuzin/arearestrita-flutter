@@ -1,22 +1,11 @@
 import 'package:arearestrita/constants.dart';
-import 'package:arearestrita/src/ui/pages/perfil.dart';
+import 'package:arearestrita/src/ui/pages/perfil2.dart';
 import 'package:arearestrita/src/ui/pages/relatorios.dart';
 import 'package:flutter/material.dart' as material3;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:arearestrita/src/ui/pages/cadastros.dart';
-
-// class HomePage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     // ignore: prefer_const_constructors
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('Controle de Acesso'),
-//       ),
-//       );
-//   }
-// }
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -29,125 +18,153 @@ class MyHomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
   // Lista de widgets para exibir nas telas de navegação
-  static final List<Widget> _widgetOptions = <Widget>[
-    // Página Inicial
+  static final List<Widget> _widgetOptions = <Widget>[];
 
-    SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // Imagem centralizada no topo
-          Container(
-            height: 150,
-            width: 150,
-            decoration: const BoxDecoration(
-                  image: const DecorationImage(
+  Future<String> _scanQRCode() async {
+    String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
+      '#FF0000',
+      'Cancelar',
+      true,
+      ScanMode.QR,
+    );
+    return barcodeScanRes;
+  }
+
+  @override
+  void initState() {
+    _widgetOptions.addAll([
+      // Página Inicial
+      SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Imagem centralizada no topo
+            Container(
+              height: 150,
+              width: 150,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: const AssetImage("assets/logoAppGuard2.jpg"))               
-                ),              
-          ),
-          // Image.network(
-          //   'https://static.wikia.nocookie.net/marvelcinematicuniverse/images/9/9b/S.H.I.E.L.D._logo_NEW.png/revision/latest?cb=20190422151215',
-          //   height: 150,
-          // ),
-          const SizedBox(height: 20),
-          // Texto "Olá usuário"
-          const Text(
-            'Olá usuário',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 20),
-          // Grid com 4 cards
-          material3.SizedBox(
-            height: 500,
-            width: 500,
-            child: GridView.count(
-              crossAxisCount: 2,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
-              shrinkWrap: true,
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              children: [
-                // Card 1 - Cadastro
-                Card(
-                  child: InkWell(
-                    onTap: () {
-                      Get.to(ListViewPage());
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.file_copy, size: 50),
-                        SizedBox(height: 10),
-                        Text('Cadastros'),
-                      ],
-                    ),
-                  ),
+                  image: AssetImage("assets/logoAppGuard2.jpg"),
                 ),
-
-                // Card 2 - Câmeras
-                Card(
-                  child: InkWell(
-                    onTap: () {
-                      Get.to(PerfilPage());
-                    },                        
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.verified_user, size: 50),
-                        SizedBox(height: 10),
-                        Text('Perfil'),
-                      ],
-                    ),
-                  ),
-                ),
-                // Card 3 - Controle de Acesso
-                Card(
-                  child: InkWell(
-                    onTap: () {
-                      Get.to(RelatoriosPage());
-                    },                    
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.security, size: 50),
-                        SizedBox(height: 10),
-                        Text('Acessos'),
-                      ],
-                    ),
-                  ),
-                ),
-                // Card 4 - Pânico
-                Card(
-                  child: InkWell(
-                    onTap: () {},
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.qr_code, size: 50),
-                        SizedBox(height: 10),
-                        Text('QR Code'),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
-          ),
-        ],
+            const SizedBox(height: 20),
+            // Texto "Olá usuário"
+            const Text(
+              'Olá usuário',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
+            // Grid com 4 cards
+            material3.SizedBox(
+              height: 500,
+              width: 500,
+              child: GridView.count(
+                crossAxisCount: 2,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
+                shrinkWrap: true,
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                children: [
+                  // Card 1 - Cadastro
+                  Card(
+                    child: InkWell(
+                      onTap: () {
+                        Get.to(ListViewPage());
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.file_copy, size: 50),
+                          SizedBox(height: 10),
+                          Text('Cadastros'),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  // Card 2 - Câmeras
+                  Card(
+                    child: InkWell(
+                      onTap: () {
+                        _scanQRCode().then((result) {
+                          showDialog(
+                            context: context,
+                            builder: (_) => AlertDialog(
+                              title: const Text('QR Code'),
+                              content: Text(result),
+                              actions: [
+                                TextButton(
+                                  child: const Text('OK'),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
+                              ],
+                            ),
+                          );
+                        });
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.qr_code, size: 50),
+                          SizedBox(height: 10),
+                          Text('QR Code'),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  // Card 3 - Controle de Acesso
+                  Card(
+                    child: InkWell(
+                      onTap: () {
+                        Get.to(RelatoriosPage());
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.security, size: 50),
+                          SizedBox(height: 10),
+                          Text('Acessos'),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  // Card 4 - Pânico
+                  Card(
+                    child: InkWell(
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.woman, size: 50),
+                          SizedBox(height: 10),
+                          Text('Pânico'),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
-    ),
-    // Pesquisar
-    const Text(
-      'Pesquisar',
-      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-    ),
-    // Perfil
-    const Text(
-      'Perfil',
-      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-    ),
-  ];
+      // qrcode
+      const Text(
+        'leitor',
+        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+      ),
+      // Perfil
+      Perfil2Page(),
+    ]);
+
+    super.initState();
+  }
 
   void _onItemTapped(int index) {
     setState(() {
