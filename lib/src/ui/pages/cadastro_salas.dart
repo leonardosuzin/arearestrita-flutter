@@ -42,7 +42,7 @@ class _CadastroSalasState extends State<CadastroSalas> {
                         labelText: 'Código da Sala',
                         filled: true,
                         fillColor: Colors.white,
-                        border: OutlineInputBorder(
+                        border: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
                       ),
@@ -57,7 +57,7 @@ class _CadastroSalasState extends State<CadastroSalas> {
                         labelText: 'Nome da Sala',
                         filled: true,
                         fillColor: Colors.white,
-                        border: OutlineInputBorder(
+                        border: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
                       ),

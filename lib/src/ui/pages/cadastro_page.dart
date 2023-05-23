@@ -51,7 +51,7 @@ class _CadastroPageState extends State<CadastroPage> {
                         labelText: 'Nome',
                         filled: true,
                         fillColor: Colors.white,
-                        border: OutlineInputBorder(
+                        border: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
                       ),
@@ -66,7 +66,7 @@ class _CadastroPageState extends State<CadastroPage> {
                         labelText: 'Data de Nascimento',
                         filled: true,
                         fillColor: Colors.white,
-                        border: OutlineInputBorder(
+                        border: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
                       ),
@@ -82,7 +82,7 @@ class _CadastroPageState extends State<CadastroPage> {
                         labelText: 'Cidade',
                         filled: true,
                         fillColor: Colors.white,
-                        border: OutlineInputBorder(
+                        border: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
                       ),
@@ -97,7 +97,7 @@ class _CadastroPageState extends State<CadastroPage> {
                         labelText: 'Universidade',
                         filled: true,
                         fillColor: Colors.white,
-                        border: OutlineInputBorder(
+                        border: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
                       ),
@@ -112,7 +112,7 @@ class _CadastroPageState extends State<CadastroPage> {
                         labelText: 'RA',
                         filled: true,
                         fillColor: Colors.white,
-                        border: OutlineInputBorder(
+                        border: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
                       ),
@@ -127,29 +127,29 @@ class _CadastroPageState extends State<CadastroPage> {
                         labelText: 'Senha',
                         filled: true,
                         fillColor: Colors.white,
-                        border: OutlineInputBorder(
+                        border: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
                       ),
                       obscureText: true,
                     ),
                   ),
-                  const SizedBox(height: 16.0),
-                  Container(
-                    width: 500,
-                    child: TextField(
-                      controller: _confirmPasswordController,
-                      decoration: const InputDecoration(
-                        labelText: 'Confirmar Senha',
-                        filled: true,
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                        ),
-                      ),
-                      obscureText: true,
-                    ),
-                  ),
+                  // const SizedBox(height: 16.0),
+                  // Container(
+                  //   width: 500,
+                  //   child: TextField(
+                  //     controller: _confirmPasswordController,
+                  //     decoration: const InputDecoration(
+                  //       labelText: 'Confirmar Senha',
+                  //       filled: true,
+                  //       fillColor: Colors.white,
+                  //       border: UnderlineInputBorder(
+                  //         borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  //       ),
+                  //     ),
+                  //     obscureText: true,
+                  //   ),
+                  // ),
                   const SizedBox(height: 24.0),
                   ElevatedButton(
                     onPressed: () {

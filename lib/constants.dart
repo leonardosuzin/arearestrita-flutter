@@ -1,3 +1,3 @@
 import 'package:flutter/material.dart';
 
-var textColorPrimary = const Color(0xFFAD0016);
+var textColorPrimary = Color.fromARGB(255, 0, 0, 0);

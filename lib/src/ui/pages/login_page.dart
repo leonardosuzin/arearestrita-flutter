@@ -52,11 +52,11 @@ class _LoginPageState extends State<LoginPage> {
                         filled: true,
                         fillColor: Colors.white,
                         labelStyle: TextStyle(color: Colors.black),
-                        enabledBorder: OutlineInputBorder(
+                        enabledBorder: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                           borderSide: BorderSide(color: Colors.white),
                         ),
-                        focusedBorder: OutlineInputBorder(
+                        focusedBorder: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                           borderSide: BorderSide(color: Colors.white),
                         ),
@@ -74,11 +74,11 @@ class _LoginPageState extends State<LoginPage> {
                         filled: true,
                         fillColor: Colors.white,
                         labelStyle: TextStyle(color: Colors.black),
-                        enabledBorder: OutlineInputBorder(
+                        enabledBorder: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                           borderSide: BorderSide(color: Colors.white),
                         ),
-                        focusedBorder: OutlineInputBorder(
+                        focusedBorder: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                           borderSide: BorderSide(color: Colors.white),
                         ),

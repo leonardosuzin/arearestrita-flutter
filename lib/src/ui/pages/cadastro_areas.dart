@@ -17,7 +17,7 @@ class _CadastroAreasState extends State<CadastroAreas> {
       appBar: AppBar(
         title: Text('GuardApp Cadastro'),
         centerTitle: true,
-        backgroundColor: textColorPrimary,                
+        backgroundColor: textColorPrimary,
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -26,62 +26,64 @@ class _CadastroAreasState extends State<CadastroAreas> {
             fit: BoxFit.cover,
           ),
         ),
-      child: Center(
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(height: 32.0),
-              Container(
-              width: 500,
-              child:TextField(
-                controller: _nameBloco,
-                decoration: InputDecoration(
-                  labelText: 'Nome do Bloco',
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  SizedBox(height: 32.0),
+                  Container(
+                    width: 500,
+                    child: TextField(
+                      controller: _nameBloco,
+                      decoration: InputDecoration(
+                        labelText: 'Nome do Bloco',
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: UnderlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              ),
-              SizedBox(height: 16.0),
-              Container(
-              width: 500,
-              child:TextField(
-                controller: _descBloco,
-                decoration: InputDecoration(
-                  labelText: 'Descrição do Bloco',
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  SizedBox(height: 16.0),
+                  Container(
+                    width: 500,
+                    child: TextField(
+                      controller: _descBloco,
+                      decoration: InputDecoration(
+                        labelText: 'Descrição do Bloco',
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: UnderlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                      ),
+                      keyboardType: TextInputType.datetime,
+                    ),
                   ),
-                ),
-                keyboardType: TextInputType.datetime,
+                  SizedBox(height: 24.0),
+                  ElevatedButton(
+                    child: Text(
+                      'Cadastrar Bloco',
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomePage()));
+                    },
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.black),
+                    ),
+                  ),
+                ],
               ),
-              ),
-              SizedBox(height: 24.0),
-              ElevatedButton(
-                child: Text(
-                  'Cadastrar Bloco',
-                  style: const TextStyle(color: Colors.white),
-                ),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-                },
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                ),
-              ),
-            ],
+            ),
           ),
         ),
-      ),
-      ),
       ),
     );
   }
