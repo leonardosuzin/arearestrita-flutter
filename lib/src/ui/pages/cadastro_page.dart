@@ -51,6 +51,7 @@ class _CadastroPageState extends State<CadastroPage> {
                         labelText: 'Nome',
                         filled: true,
                         fillColor: Colors.white,
+                        labelStyle: TextStyle(color: Colors.black),
                         border: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
@@ -66,6 +67,7 @@ class _CadastroPageState extends State<CadastroPage> {
                         labelText: 'Data de Nascimento',
                         filled: true,
                         fillColor: Colors.white,
+                        labelStyle: TextStyle(color: Colors.black),
                         border: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
@@ -82,6 +84,7 @@ class _CadastroPageState extends State<CadastroPage> {
                         labelText: 'Cidade',
                         filled: true,
                         fillColor: Colors.white,
+                        labelStyle: TextStyle(color: Colors.black),
                         border: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
@@ -97,6 +100,7 @@ class _CadastroPageState extends State<CadastroPage> {
                         labelText: 'Universidade',
                         filled: true,
                         fillColor: Colors.white,
+                        labelStyle: TextStyle(color: Colors.black),
                         border: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
@@ -112,6 +116,7 @@ class _CadastroPageState extends State<CadastroPage> {
                         labelText: 'RA',
                         filled: true,
                         fillColor: Colors.white,
+                        labelStyle: TextStyle(color: Colors.black),
                         border: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
@@ -127,6 +132,7 @@ class _CadastroPageState extends State<CadastroPage> {
                         labelText: 'Senha',
                         filled: true,
                         fillColor: Colors.white,
+                        labelStyle: TextStyle(color: Colors.black),
                         border: UnderlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),

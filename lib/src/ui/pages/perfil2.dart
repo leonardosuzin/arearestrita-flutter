@@ -1,4 +1,9 @@
+import 'dart:io';
+
+import 'package:arearestrita/helpers/http_overrides.dart';
+import 'package:arearestrita/src/controllers/perfilController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Perfil2Page extends StatefulWidget {
   @override
@@ -6,6 +11,25 @@ class Perfil2Page extends StatefulWidget {
 }
 
 class Perfil2PageState extends State<Perfil2Page> {
+  final controller = Get.put(PerfilController());
+  String firstName = '';
+  String lastName = '';
+  String profilePicture = '';
+
+  @override
+  void initState() {
+    super.initState();
+    HttpOverrides.global = MyHttpOverrides();
+
+    controller.getUserList().then((_) {
+      setState(() {
+        firstName = controller.objetoUsuarioPrincipal['firstName'];
+        lastName = controller.objetoUsuarioPrincipal['lastName'];
+        profilePicture = controller.objetoUsuarioPrincipal['picture'];
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,26 +44,28 @@ class Perfil2PageState extends State<Perfil2Page> {
               width: double.infinity,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   CircleAvatar(
                     radius: 60,
-                    backgroundImage: AssetImage("assets/icons-user.png"),
+                    backgroundImage: profilePicture != ''
+                        ? NetworkImage(profilePicture) as ImageProvider
+                        : const AssetImage("assets/icons-user.png"),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Text(
-                    'Nome do Usuário',
-                    style: TextStyle(
+                    ' $firstName $lastName ',
+                    style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
+                  const Text(
                     'Registro Acadêmico:',
                     style: TextStyle(
                       fontSize: 18,
                     ),
                   ),
-                  Text(
+                  const Text(
                     '1999494',
                     style: TextStyle(
                       fontSize: 18,

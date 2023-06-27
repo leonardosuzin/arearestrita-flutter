@@ -1,6 +1,7 @@
 import 'package:arearestrita/constants.dart';
 import 'package:arearestrita/src/ui/pages/perfil2.dart';
 import 'package:arearestrita/src/ui/pages/relatorios.dart';
+import 'package:arearestrita/src/ui/pages/usuarios_page.dart';
 import 'package:flutter/material.dart' as material3;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -40,6 +41,7 @@ class MyHomePageState extends State<HomePage> {
           children: [
             // Imagem centralizada no topo
             Container(
+              margin: const EdgeInsets.all(40),
               height: 150,
               width: 150,
               decoration: const BoxDecoration(
@@ -84,11 +86,12 @@ class MyHomePageState extends State<HomePage> {
                     ),
                   ),
 
-                  // Card 2 - Câmeras
+                  // Card 2 - qrCode
                   Card(
                     child: InkWell(
                       onTap: () {
                         _scanQRCode().then((result) {
+                          print(result);
                           showDialog(
                             context: context,
                             builder: (_) => AlertDialog(
@@ -134,16 +137,18 @@ class MyHomePageState extends State<HomePage> {
                     ),
                   ),
 
-                  // Card 4 - Pânico
+                  // Card 4 - Usuarios
                   Card(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(UsuariosListPage());
+                      },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
                           Icon(Icons.woman, size: 50),
                           SizedBox(height: 10),
-                          Text('Pânico'),
+                          Text('Usuários'),
                         ],
                       ),
                     ),
