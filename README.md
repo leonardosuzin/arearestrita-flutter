@@ -3,10 +3,8 @@
 <br>
 Trabalho envolvendo as matérias de Desenvolvimento Web-Servidor - Desenvolvimento Mobile e Projeto de Software da UTFPR 
 <br>
-<h3>Alunos: </h3><br>
-Augusto <br>
-João Paulo <br>
-Leonardo <br>
+<h3>Aluno: </h3><br>
+Augusto Amaral <br>
 <br>
 <h3> instalação do projeto: </h3> <br>
 Para este projeto que foi realizado para as matérias de Desenvolvimento Mobile e Web Servidor é necessário uma instalação do Flutter para a execução do mesmo, em seguida os seguintes passos: <br>
@@ -30,13 +28,9 @@ Partes feitas<br>
 - homePage<br>
 - cadastroSalaPage<br>
 - horarioPage<br>
-<br>
-<h3> Leonardo: </h3>
 - relatoriosPage<br>
 - salasPage<br>
 - loginPage<br>
-
-<h3> João Paulo: </h3>
 - cadastroDepartamentoPage<br>
 - perfilPage<br>
 - cadastroUsuarioPage<br>
