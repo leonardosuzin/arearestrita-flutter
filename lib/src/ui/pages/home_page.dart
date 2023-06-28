@@ -91,22 +91,24 @@ class MyHomePageState extends State<HomePage> {
                     child: InkWell(
                       onTap: () {
                         _scanQRCode().then((result) {
-                          print(result);
-                          showDialog(
-                            context: context,
-                            builder: (_) => AlertDialog(
-                              title: const Text('QR Code'),
-                              content: Text(result),
-                              actions: [
-                                TextButton(
-                                  child: const Text('OK'),
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                              ],
-                            ),
-                          );
+                          if (result == '-1') {
+                          } else {
+                            showDialog(
+                              context: context,
+                              builder: (_) => AlertDialog(
+                                title: const Text('QR Code'),
+                                content: Text(result),
+                                actions: [
+                                  TextButton(
+                                    child: const Text('OK'),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                ],
+                              ),
+                            );
+                          }
                         });
                       },
                       child: Column(
@@ -161,7 +163,7 @@ class MyHomePageState extends State<HomePage> {
       ),
       // qrcode
       const Text(
-        'leitor',
+        'leitor QrCode',
         style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
       ),
       // Perfil

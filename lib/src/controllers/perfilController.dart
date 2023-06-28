@@ -13,7 +13,6 @@ class PerfilController extends GetxController {
     var headers = {'app-id': '649a177f9e572103f90774d9'};
 
     var res = await http.get(Uri.parse(url), headers: headers);
-    // print(res.body);
 
     Map<String, dynamic> json = jsonDecode(res.body);
     List<dynamic> userList = json['data'];

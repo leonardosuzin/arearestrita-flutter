@@ -22,7 +22,6 @@ class _UsuariosListPageState extends State<UsuariosListPage> {
     controller.getUserList().then((_) {
       setState(() {
         userList = controller.users;
-        print(userList);
       });
     });
   }
@@ -31,7 +30,7 @@ class _UsuariosListPageState extends State<UsuariosListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Usuários'),
+        title: const Text('Usuários'),
         centerTitle: true,
         backgroundColor: textColorPrimary,
       ),
@@ -40,10 +39,48 @@ class _UsuariosListPageState extends State<UsuariosListPage> {
         itemBuilder: (context, index) {
           var user = userList[index];
           return ListTile(
-            leading: Icon(Icons.person),
+            leading: const Icon(Icons.person),
             title: Text(user['firstName'] + ' ' + user['lastName']),
             onTap: () {
-              // Ação quando um usuário for selecionado
+              if (user['firstName'] == 'Sara') {
+                showDialog(
+                  context: context,
+                  builder: (_) => AlertDialog(
+                    title: const Text('Presenças'),
+                    content: const Text(
+                        'Aluno: Sara Andersen. \nSala: C203. \nMateria: AS35C - Programação de Dispositivos Móveis. \nHorário Inicio: 18:40 \nHorário Fim: 20:20 \nPRESENÇA CONFIRMADA ✓'),
+                    actions: [
+                      TextButton(
+                        child: const Text('OK'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  ),
+                );
+              } else {
+                showDialog(
+                  context: context,
+                  builder: (_) => AlertDialog(
+                    title: const Text('Presenças'),
+                    content: Text('Aluno: ' +
+                        user['firstName'] +
+                        ' ' +
+                        user['lastName'] +
+                        ' ' +
+                        '\nNão houve registro de presença'),
+                    actions: [
+                      TextButton(
+                        child: const Text('OK'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  ),
+                );
+              }
             },
           );
         },

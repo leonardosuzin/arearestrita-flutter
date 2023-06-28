@@ -26,8 +26,6 @@ class CadastroUsuarioController extends GetxController {
     );
 
     int resultado = await DataBaseHelper.instance.cadastrarUsuario(novoUsuario);
-    print('RESULTADO ANTES DO PRINT');
-    print(resultado);
     if (resultado != 0) {
       if (kDebugMode) {
         print('Usuário cadastrado com sucesso!');
